@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/View_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null">
+
+
+        <ImageView
+            android:id="@+id/ImageView_plusIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:src="@drawable/round_add_black_24dp"
+            app:layout_constraintLeft_toLeftOf="@+id/View_button"
+            app:layout_constraintTop_toTopOf="@+id/View_button"
+            app:layout_constraintBottom_toBottomOf="@+id/View_button"
+            app:layout_constraintRight_toLeftOf="@+id/TextView_title"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            />
+
+        <TextView
+            android:id="@+id/TextView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="휴가 추가"
+            android:textSize="@dimen/main_textsize"
+            android:textColor="#000000"
+            app:layout_constraintRight_toRightOf="@+id/View_button"
+            app:layout_constraintTop_toTopOf="@+id/View_button"
+            app:layout_constraintBottom_toBottomOf="@+id/View_button"
+            app:layout_constraintLeft_toRightOf="@+id/ImageView_plusIcon"
+            app:layout_constraintHorizontal_chainStyle="packed"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+

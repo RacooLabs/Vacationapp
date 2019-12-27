@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        card_view:cardCornerRadius="16dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <View
+                android:id="@+id/View_date_background1"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                card_view:layout_constraintLeft_toLeftOf="parent"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/TextView_month1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="40sp"
+                card_view:layout_constraintLeft_toLeftOf="@+id/View_date_background1"
+                card_view:layout_constraintRight_toRightOf="@+id/View_date_background1"
+                card_view:layout_constraintTop_toTopOf="@+id/View_date_background1" />
+
+            <TextView
+                android:id="@+id/TextView_year1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:gravity="center"
+                android:text="2016"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                card_view:layout_constraintBottom_toBottomOf="@+id/View_date_background1"
+                card_view:layout_constraintLeft_toLeftOf="@+id/View_date_background1"
+                card_view:layout_constraintRight_toRightOf="@+id/View_date_background1" />
+
+            <TextView
+                android:id="@+id/TextView_title1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                card_view:layout_constraintRight_toRightOf="parent"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintLeft_toRightOf="@+id/TextView_days1"
+                android:text="전장비 휴가"
+                android:textSize="@dimen/main_textsize"
+                android:gravity="center"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:id="@+id/TextView_days1"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="+40일"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintLeft_toRightOf="@+id/View_date_background1"
+                card_view:layout_constraintRight_toLeftOf="@+id/TextView_title1"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>
+
