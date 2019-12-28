@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_slidingup);
 
+        //git test
+
         MobileAds.initialize(this, "ca-app-pub-7972968096388401~4035110400");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
