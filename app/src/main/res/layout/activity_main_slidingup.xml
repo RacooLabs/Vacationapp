@@ -33,7 +33,7 @@
             android:layout_height="0dp"
             android:scrollbars="vertical"
             android:background="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/adView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -61,6 +61,7 @@
             ads:layout_constraintLeft_toLeftOf="parent"
             ads:layout_constraintRight_toRightOf="parent"
             ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintTop_toBottomOf="@+id/my_recycler_view"
             ads:adUnitId="ca-app-pub-7972968096388401/6469702053">
         </com.google.android.gms.ads.AdView>
 

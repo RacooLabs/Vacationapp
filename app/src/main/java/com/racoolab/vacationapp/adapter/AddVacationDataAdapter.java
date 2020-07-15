@@ -133,14 +133,14 @@ public class AddVacationDataAdapter extends RecyclerView.Adapter<AddVacationData
                         resetsubtotal();
                     }
 
-
-
                 }
             });
 
         }
 
     }
+
+
 
     @Override
     public int getItemCount() {

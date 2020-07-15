@@ -7,14 +7,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.racoolab.vacationapp.R;
 import com.racoolab.vacationapp.adapter.AddVacationDataAdapter;
 import com.racoolab.vacationapp.datatype.MonthData;
@@ -46,6 +52,11 @@ public class AddVacationDataActivity extends AppCompatActivity implements OnItem
     private TextView TextView_TextView_subTotalvalue;
     private TextView TextView_cancelButton;
 
+    public AdView mAdView;
+
+
+
+
 
     @Override
     public void onClick (int subtotal){
@@ -61,6 +72,11 @@ public class AddVacationDataActivity extends AppCompatActivity implements OnItem
 
         ActionBar ab = getSupportActionBar() ;
         ab.setTitle("수입");
+
+        MobileAds.initialize(this, "ca-app-pub-7972968096388401~4035110400");
+        mAdView = findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
 

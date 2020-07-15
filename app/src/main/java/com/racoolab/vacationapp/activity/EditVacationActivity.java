@@ -1,10 +1,13 @@
 package com.racoolab.vacationapp.activity;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -15,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.racoolab.vacationapp.R;
 import com.racoolab.vacationapp.adapter.EditVacationAdapter;
 import com.racoolab.vacationapp.datatype.MonthData;
@@ -39,6 +45,8 @@ public class EditVacationActivity extends AppCompatActivity implements OnItemCli
     NumberPicker nPicker_month;
     EditText EditText_title;
 
+    public AdView mAdView;
+
 
 
     private TextView TextView_addButton;
@@ -54,8 +62,9 @@ public class EditVacationActivity extends AppCompatActivity implements OnItemCli
     private StateData statedata = new StateData();
     private int position;
 
-    
-    
+
+
+
 
 
     @Override
@@ -70,6 +79,10 @@ public class EditVacationActivity extends AppCompatActivity implements OnItemCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_vacation_data_edit);
 
+        MobileAds.initialize(this, "ca-app-pub-7972968096388401~4035110400");
+        mAdView = findViewById(R.id.adView3);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         arrayVacationData = new ArrayList<>(); // 넘길 배열

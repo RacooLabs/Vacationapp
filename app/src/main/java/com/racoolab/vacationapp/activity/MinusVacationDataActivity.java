@@ -1,10 +1,13 @@
 package com.racoolab.vacationapp.activity;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -15,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.racoolab.vacationapp.R;
 import com.racoolab.vacationapp.adapter.AddVacationDataAdapter;
 import com.racoolab.vacationapp.datatype.MonthData;
@@ -47,6 +53,10 @@ public class MinusVacationDataActivity extends AppCompatActivity implements OnIt
     private TextView TextView_cancelButton;
 
 
+    public AdView mAdView;
+
+
+
     @Override
     public void onClick (int subtotal){
         TextView_TextView_subTotalvalue.setText("합계 " + subtotal);
@@ -58,6 +68,11 @@ public class MinusVacationDataActivity extends AppCompatActivity implements OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_vacation_data);
+
+        MobileAds.initialize(this, "ca-app-pub-7972968096388401~4035110400");
+        mAdView = findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         ActionBar ab = getSupportActionBar() ;
         ab.setTitle("지출");
