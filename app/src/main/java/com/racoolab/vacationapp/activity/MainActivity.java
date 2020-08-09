@@ -370,7 +370,6 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("Set",json );
         editor.commit();
 
-
     }
 
     List<MonthData> load() {
